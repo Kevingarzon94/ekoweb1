@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Eko Karga Clientes</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative02.min.css" rel="stylesheet">
+
+    <script src="controller/consultarservicio.js"></script>
+    <script>
+    $(function () {
+    $("#dialog").dialog({
+    autoOpen: false,
+    modal: true
+    });
+    $("#abrir")
+    .button()
+    .click(function () {
+    $("#dialog").dialog("open");
+    });
+    });
+    </script>
+  </head>
+
+  <body id="page-top" onload="sessionId()">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Eko Karga</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#perfil">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#servicios">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#historial">Historial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#tarifas">Tarifas</a>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="salir">Salir</a>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead2 text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong>Su negocio nunca se detiene!</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5"> - Eko Karga -  el Sistema de Gestión de Transporte de Carga, ideal para mejorar su operación y la de sus clientes.</p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Consultar servicio</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">Servicios.</h2>
+            <hr class="light my-4">
+            <p class="text-faded mb-4">Consulte y genere sus servicios desde la plataforma sin recurrir a intermediarios!</p>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Consulte sus servicios</h2>
+            <hr class="my-4">
+            <form class="form-inline">
+              <div class="form-group">
+                <label>Estado: </label>
+              </div>
+              <div class="form-group">
+                <select class="form-control" name="estado" id="estado">
+                    <option value="6311625"> Created </option>
+                    <option value="6948340"> En Asignación </option>
+                    <option value="6498048"> Requiere Aprobación Tarifa</option>
+                    <option value="6535364"> Requiere ajustar Fechas </option>
+                    <option value="6658658"> Requiere Verificación de Flete</option>
+                    <option value="6948349"> Vehículo Asignado </option>
+                    <option value="7402225"> Aceptado x Conductor </option>
+                    <option value="6957915"> Confirmado </option>
+                    <option value="7309088"> O/Cargue Generado</option>
+                    <option value="6951016"> Cancelado </option>
+                    <option value="7075060"> No Atendido</option>
+                    <option value="7586977"> Plan de Ruta Generado</option>
+                    <option value="7588018"> En Plataforma</option>
+                    <option value="7590912"> Llegada de Despacho</option>
+                    <option value="7590913"> Cumplió </option>
+                </select>
+              </div>
+            </form>
+            </br>
+            <div class="container">
+            <button class="btn btn-default" onclick="viewService()">Buscar</button>
+            </div>
+            </br>
+            <div class="table-responsive">
+
+              <table class="table" id="grid">
+                <tr>
+                  <th>No Servicio</th>
+                  <th>Tipo</th>
+                  <th>Toneladas</th>
+                  <th>Origen</th>
+                  <th>Cargue</th>
+                  <th>Destino</th>
+                  <th>Total Costo</th>
+
+                </tr>
+                <tbody id="ProSelected">
+                        <tr>
+
+                        </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+         
+        </div>
+      </div>
+    </section>
+     <section class="bg-dark text-white">
+      <div class="container text-center">
+        <h2 class="mb-4">ESPACIO PARA UBICAR ELEMENTOS DE LA PLATAFORMA!</h2>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Entre en contacto con nosotros!</h2>
+            <hr class="my-4">
+            <p class="mb-5">Cuéntanos cómo ha sido tu experiencia con nuestra solución. Regálanos una llamada o envíanos un correo y nos pondremos en contacto en el menor tiempo posible!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+            <p>Bogotá.DC, 777-7777</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com">servicioalcliente@ekokarga.com</a>
+              
+          </div>
+      </div>
+
+    
+
+</section>
+     <section class="bg-dark">
+      <div class="container text-center">
+        <h7 class="mb-4">©2018 - Eko Karga / Todos los derechos reservados.</h2>
+      </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+
+  </body>
+
+</html>
