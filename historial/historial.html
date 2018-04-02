@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Eko Karga Clientes</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative03.min.css" rel="stylesheet">
+
+
+  
+  <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css'>
+  <link rel='stylesheet prefetch' href='http://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css'>
+ 
+
+
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Eko Karga</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#perfil">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#servicios">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#historial">Historial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#tarifas">Tarifas</a>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#salir">Salir</a>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead2 text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong>Su negocio nunca se detiene!</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5"> - Eko Karga -  el Sistema de Gestión de Transporte de Carga, ideal para mejorar su operación y la de sus clientes.</p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#servicios">Consultar servicio</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <section class="bg-primary" id="about">
+         <div class="container">
+               <div class="row">
+                   <div class="col-lg-8 mx-auto text-center">
+                      <h2 class="section-heading text-white">Historial.</h2>
+                      <hr class="light my-4">
+                      <p class="text-faded mb-4">Realice la búsqueda por estado del servicio.</p>
+                  
+                   
+                      <div id="toolbar">
+                          <select class="form-control">
+                              <option value="">Asignado</option>
+                              <option value="all">Confirmado</option>
+                              <option value="selected">En transito</option>
+                              <option value="">Cumplido</option>
+                          </select>
+                      </div>
+                    </div>
+
+                      <div class="container">
+                      <table id="table" 
+                             data-toggle="table"
+                             data-search="true"
+                             data-filter-control="true" 
+                             data-show-export="true"
+                             data-click-to-select="true"
+                             data-toolbar="#toolbar"
+                             class="historial">
+                        <thead>
+                          <tr>
+                            <th data-field="state" data-checkbox="true"></th>
+                            <th data-field="serv" data-filter-control="input" data-sortable="true">#. Serv</th>
+                            <th data-field="estado" data-filter-control="select" data-sortable="true">Estado</th>
+                            <th data-field="fechasol" data-filter-control="select" data-sortable="true">Fecha Solic</th>
+                            <th data-field="origen" data-filter-control="select" data-sortable="true">Origen</th>
+                            <th data-field="destino" data-filter-control="select" data-sortable="true">Destino</th>
+                            <th data-field="placa" data-filter-control="select" data-sortable="true">Placa</th>
+                            <th data-field="fechacar" data-filter-control="select" data-sortable="true">Fecha Cargue</th>
+                            <th data-field="fechadescar" data-filter-control="select" data-sortable="true">Fecha Descargue</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
+                            <td>1546789</td>
+                            <td>Asignado</td>
+                            <td>01/03/2017</td>
+                            <td>Tocancipá</td>
+                            <td>Bogotá</td>
+                            <td>QRO234</td>
+                            <td>03/03/2017</td>
+                            <td>05/03/2017</td>
+                          </tr>
+                          <tr>
+                            <td class="bs-checkbox "><input data-index="1" name="btSelectItem" type="checkbox"></td>
+                            <td>1546790</td>
+                            <td>Asignado</td>
+                            <td>01/03/2017</td>
+                            <td>Chía</td>
+                            <td>Bogotá</td>
+                            <td>QRO234</td>
+                            <td>03/03/2017</td>
+                            <td>05/03/2017</td>
+                          </tr>
+                          <tr>
+                            <td class="bs-checkbox "><input data-index="2" name="btSelectItem" type="checkbox"></td>
+                            <td>1546793</td>
+                            <td>Asignado</td>
+                            <td>01/03/2017</td>
+                            <td>Sopó</td>
+                            <td>Bogotá</td>
+                            <td>QRO234</td>
+                            <td>03/03/2017</td>
+                            <td>05/03/2017</td>
+                          </tr>
+                          <tr>
+                            <td class="bs-checkbox "><input data-index="3" name="btSelectItem" type="checkbox"></td>
+                            <td>1546785</td>
+                            <td>Asignado</td>
+                            <td>01/03/2017</td>
+                            <td>Cali</td>
+                            <td>Pereira</td>
+                            <td>QRO234</td>
+                            <td>03/03/2017</td>
+                            <td>05/03/2017</td>
+                          </tr>
+                          <tr>
+                            <td class="bs-checkbox "><input data-index="4" name="btSelectItem" type="checkbox"></td>
+                            <td>1546777</td>
+                            <td>En transito</td>
+                            <td>01/03/2017</td>
+                            <td>Bogotá</td>
+                            <td>Rionegro</td>
+                            <td>QRO234</td>
+                            <td>03/03/2017</td>
+                            <td>05/03/2017</td>
+                          </tr>
+                          <tr>
+                            <td class="bs-checkbox "><input data-index="5" name="btSelectItem" type="checkbox"></td>
+                            <td>1546767</td>
+                            <td>Asignado</td>
+                            <td>01/03/2017</td>
+                            <td>Girardot</td>
+                            <td>Bogotá</td>
+                            <td>QRO234</td>
+                            <td>03/03/2017</td>
+                            <td>05/03/2017</td>
+                          </tr>
+                          <tr>
+                            <td class="bs-checkbox "><input data-index="6" name="btSelectItem" type="checkbox"></td>
+                           <td>1546743</td>
+                            <td>Cumplido</td>
+                            <td>01/03/2017</td>
+                            <td>Cajicá</td>
+                            <td>Bogotá</td>
+                            <td>QRO234</td>
+                            <td>03/03/2017</td>
+                            <td>05/03/2017</td>
+                          </tr>
+                          <tr>
+                            <td class="bs-checkbox "><input data-index="7" name="btSelectItem" type="checkbox"></td>
+                           <td>1546799</td>
+                            <td>Asignado</td>
+                            <td>01/03/2017</td>
+                            <td>Buenaventura</td>
+                            <td>Cali</td>
+                            <td>QRO234</td>
+                            <td>03/03/2017</td>
+                            <td>05/03/2017</td>
+                          </tr>
+                          <tr>
+                            <td class="bs-checkbox "><input data-index="8" name="btSelectItem" type="checkbox"></td>
+                            <td>1546781</td>
+                            <td>Cumplido</td>
+                            <td>01/03/2017</td>
+                            <td>Cucutá</td>
+                            <td>Barranquilla</td>
+                            <td>QRO234</td>
+                            <td>03/03/2017</td>
+                            <td>05/03/2017</td>
+                          </tr>
+                          <tr>
+                            <td class="bs-checkbox "><input data-index="9" name="btSelectItem" type="checkbox"></td>
+                           <td>1546785</td>
+                            <td>Asignado</td>
+                            <td>01/03/2017</td>
+                            <td>Tocancipá</td>
+                            <td>Bogotá</td>
+                            <td>QRO234</td>
+                            <td>03/03/2017</td>
+                            <td>05/03/2017</td>
+                          </tr>
+                          <tr>
+                            <td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
+                            <td>1546732</td>
+                            <td>Confirmado</td>
+                            <td>01/03/2017</td>
+                            <td>Tocancipá</td>
+                            <td>Bogotá</td>
+                            <td>QRO234</td>
+                            <td>03/03/2017</td>
+                            <td>06/04/2017</td>
+                          </tr>
+                          <tr>
+                          <td class="bs-checkbox "><input data-index="11" name="btSelectItem" type="checkbox"></td>
+                            <td>1546741</td>
+                            <td>En transito</td>
+                            <td>01/03/2017</td>
+                            <td>Tocancipá</td>
+                            <td>Bogotá</td>
+                            <td>QRO234</td>
+                            <td>03/08/2017</td>
+                            <td>05/09/2017</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                   </div>
+               </div>
+          </div>
+    </section>
+
+       
+
+    <section id="contact">
+          <div class="container">
+                <div class="row">
+                      <div class="col-lg-8 mx-auto text-center">
+                          <h2 class="section-heading">Entre en contacto con nosotros!</h2>
+                          <hr class="my-4">
+                          <p class="mb-5">Cuéntanos cómo ha sido tu experiencia con nuestra solución. Regálanos una llamada o envíanos un correo y nos pondremos en contacto en el menor tiempo posible!</p>
+                    </div>
+                </div>
+          </div>
+
+        <div class="row">
+             <div class="col-lg-4 ml-auto text-center">
+                <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+                    <p>Bogotá.DC, 777-7777</p>
+             </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com">servicioalcliente@ekokarga.com</a>  
+          </div>
+      </div>
+
+      <section class="bg-dark">
+            <div class="container text-center">
+               <h7 class="mb-4">©2018 - Eko Karga / Todos los derechos reservados.</h2>
+            </div>
+      </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+
+
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js'></script>
+    <script src='http://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+  </body>
+
+</html>

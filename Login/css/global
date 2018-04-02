@@ -1,0 +1,10 @@
+.bg {
+	background:url('../images/bgeko.png') no-repeat;
+	width:100%;
+	height: 100vh; 
+	}
+
+.form-container {
+	border: 1px solid #454565; padding: 30px 40px; 
+}
+

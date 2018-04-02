@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+
+    <title>Eko Karga Clientes</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative06.min.css" rel="stylesheet">
+    <script src="controller/detalleServicio.js"></script>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+  <body id="page-top" onload="getIdDespacho()">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a onclick="history.back()" href="#" class="btn btn-info btn-lg">
+          <span  class="glyphicon glyphicon-arrow-left"></span> Volver
+        </a>        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+         <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="servicios.php">Solicitud</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="formulario.php">Nuevo Servicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="historial.php">Historial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="Login/index.html">Salir</a>
+            </li>
+      </ul>
+        </div>
+      </div>
+    </nav>
+
+    
+
+    <section class="bg-primary" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">Detalle del Servicio.</h2>
+            <hr class="light my-4">
+            <p class="text-faded mb-4">A continuación encontrará la información relacionada al servicio consultado.</p>
+            <table class="table table-bordered" id="Despacho">
+              <thead>
+                <tr>
+                  <th>Despacho</th>
+                  <th>Fecha</th>
+                  <th>Conductor</th>
+                  <th>Vehiculo</th>  
+                </tr>
+              </thead>
+              <tbody id="DespachoTbody">
+
+              </tbody>
+            </table>         
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+     <section class="bg-dark text-black">
+      <div class="container text-center">
+        <h2 class="mb-4">2. Detalles del despacho</h2>
+                <table class="table table-bordered" id="detallesdelDespacho">
+                  <thead>
+                    <tr>
+                      <th>Orden de Servicio</th>
+                      <th>Cliente Destino</th>
+                      <th>Ciudad</th>
+                      <th>Direccion destino</th>
+                      <th>Prod Transportado</th>
+                      <th>Peso</th>
+                      <th>Fecha Salida</th>
+                      <th>Fecha Entrega</th>
+                      <th>imagen 1</th>
+                      <th>imagen 2</th>
+                      <th>imagen 3</th>
+                      <th>Con Novedad</th>
+                    </tr>
+                  </thead>
+                  <tbody id="detallesdelDespachoTbody">
+
+                  </tbody>
+                </table>
+      </div>
+    </section>
+
+     <section class="bg-blue text-white">
+      <div class="container text-center">
+        <h2 class="mb-4">3. Documentos Remesa</h2>
+
+             <table class="table table-bck table-striped table-inverse">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Remesa del Servicio</th>
+                    <th></th>
+
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+      </div>
+    </section>
+
+     <section class="bg-dark text-black">
+      <div class="container text-center">
+        <h2 class="mb-4">4. Novedades</h2>
+      <table class="table table-bordered" id="novedadesT">
+                  <thead>
+                    <tr>
+                      <th>Tipo de Novedad</th>
+                      <th>Fecha y hora </th>
+                      <th>Observaciones</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="novedadesTbody">
+
+                  </tbody>
+                </table>
+      </div>
+    </section>
+
+   
+   
+
+   </section>
+     <section class="bg-dark">
+      <div class="container text-center">
+        <h7 class="mb-4">©2018 - Eko Karga / Todos los derechos reservados.</h2>
+      </div>
+    </section>
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+
+  </body>
+
+</html>
